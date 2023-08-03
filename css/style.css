@@ -56,6 +56,11 @@ body{
 .logo{
     height: 35px;
 }
+
+/*.logo:hover{
+    animation: moveInLeft 1s ease-out; Useful when hovering something and you want to do an animation
+}*/
+
 /* Gotta study the text-box part where it uses top,left and transform */
 .text-box{
     position: absolute;
@@ -67,6 +72,7 @@ body{
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    backface-visibility: hidden;
 }
 
 .heading-primary-main{
@@ -75,7 +81,11 @@ body{
     font-weight: 400;
     letter-spacing: 35px;
     animation-name: moveInLeft;
-    animation-duration: 5s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-timing-function: step-end; The animation-timing-function CSS property specified how a CSS animtion shoul progress over the duration of each cycle */
+    /*animation-iteration-count: 3; It repeats the animation 3 times */
+    /*animation-delay: 3s;  It waits 3 seconds for the animation to start */
 } 
 
 .heading-primary-sub{
@@ -83,12 +93,37 @@ body{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft{
     0%{
         opacity: 0;
         transform: translateX(-100);
+    }
+
+    /* 60%{
+        transform: rotate(180deg); using animations to rotate the element 
+    } */
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
     }
 
     100%{
