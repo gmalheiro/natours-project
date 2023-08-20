@@ -116,7 +116,7 @@ body{
     }
 }
 
-@keyfr ames moveInRight{
+@keyframes moveInRight{
     0%{
         opacity: 0;
         transform: translateX(100px);
